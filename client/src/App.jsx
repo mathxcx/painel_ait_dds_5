@@ -1,13 +1,21 @@
 import './App.css';
-import Cabecalho from './components/Cabecalho';
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
+
+import Home from './components/pages/Home';
+import Login from './components/pages/Login';
 
 function App() {
   return (
-    <>
-    <Cabecalho/>
-    <h1>Olá mundo</h1>
-    <p>DD5</p>
-   </>
+
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/login' element={<Login/>}/>
+
+       
+      </Routes>
+    </Router>
+    
   );
 }
 
