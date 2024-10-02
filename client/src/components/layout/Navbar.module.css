@@ -1,0 +1,8 @@
+.menu_navegacao{
+    color: #e1e2e3;
+}
+
+.menu_navegacao a:hover{
+    color: #ffff;
+    transition: 0.5s;
+}
