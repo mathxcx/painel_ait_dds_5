@@ -34,14 +34,14 @@
       "chave": null
     },
     {
-      "id": "0297",
-      "data": "2024-10-04",
-      "data_hora_inicio": "17:00",
-      "data_hora_fim": "22:00",
-      "turma": "AIT-DD4",
+      "id": "b513",
+      "data": "2024-10-07",
+      "data_hora_inicio": "18:00",
+      "data_hora_fim": "21:30",
+      "turma": "AIT-DDS-5",
       "instrutor": "MATHEUS SARTI BRUNELLI",
-      "unidade_curricular": "HJDFIID",
-      "ambiente": "OI",
+      "unidade_curricular": "DESENVOLVIMENTO DE SISTEMAS DE AUTOMAÇÃO MECÂNICA (CH: 100.0000)",
+      "ambiente": "VTRIA-3-LAB-3003",
       "chave": null
     }
   ],
