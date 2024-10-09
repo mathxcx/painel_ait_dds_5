@@ -1,7 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
-function FormAula({titulo,textoBotao,handleSubmit,id}) {
+function FormAula({titulo,textoBotao,handleSubmit,id,tipo}) {
+    const navigate = useNavigate();
 
     const [dataAula, setDataAula] = useState('');
     const [horaInicio, setHoraInicio] = useState('');
@@ -31,7 +33,13 @@ function FormAula({titulo,textoBotao,handleSubmit,id}) {
             if (!resposta.ok){
                 throw new Error('Erro ao buscar aula')
             }else{
-                console.log(JSON.stringify(resposta));
+                const respostaJSON = await resposta.json();
+                console.log(respostaJSON);
+                setTurma(respostaJSON.turma);
+                setInstrutor(respostaJSON.instrutor);
+                setUnidadeCurricular(respostaJSON.unidade_curricular);
+                setAmbiente(respostaJSON.ambiente)
+                
 
             }
             
@@ -55,7 +63,8 @@ function FormAula({titulo,textoBotao,handleSubmit,id}) {
 
         }
 
-        handleSubmit(aula);
+        handleSubmit(aula,id);
+        navigate(`/gestao_aula/${tipo}`)
     }
 
     

@@ -1,48 +1,48 @@
 {
   "aulas": [
     {
-      "id": "1300",
-      "data": "2024-08-29T03:00:00.000Z",
-      "data_hora_inicio": "2024-08-29T21:00:00.000Z",
-      "data_hora_fim": "2024-08-30T01:00:00.000Z",
+      "data": "",
+      "data_hora_inicio": "",
+      "data_hora_fim": "",
       "turma": "EMP-NBM-03",
-      "instrutor": "JOEL HERBERT BARBOSA SILVA",
+      "instrutor": "GABRIEL DE ASSIS SPERANDIO",
       "unidade_curricular": "NOÇÕES BÁSICAS PARA MAQUINISTAS (CH: 219.0000)",
-      "ambiente": "VTRIA-3-SALA-3004",
-      "chave": null
+      "ambiente": "VTRIA-3-SALA-30045",
+      "chave": null,
+      "id": "1300"
     },
     {
-      "id": "1280",
-      "data": "2024-08-29T03:00:00.000Z",
-      "data_hora_inicio": "2024-08-29T21:00:00.000Z",
-      "data_hora_fim": "2024-08-30T01:00:00.000Z",
+      "data": "",
+      "data_hora_inicio": "",
+      "data_hora_fim": "",
       "turma": "UMO-MBMM-03",
-      "instrutor": "THADEU VASCONCELOS DA SILVA GOMES",
+      "instrutor": "PIETRO GABRIEL HERINGER MENEZES",
       "unidade_curricular": "MECÂNICA BÁSICA DE MOTORES DE MOTOCICLETAS (CH: 100.0000)",
-      "ambiente": "VTRIA-EXTER-EXTERNO",
-      "chave": null
+      "ambiente": "VTRIA-EXTER-EXTERNO1",
+      "chave": null,
+      "id": "1280"
     },
     {
-      "id": "1326",
-      "data": "2024-08-29T03:00:00.000Z",
-      "data_hora_inicio": "2024-08-29T21:30:00.000Z",
-      "data_hora_fim": "2024-08-30T01:00:00.000Z",
+      "data": "",
+      "data_hora_inicio": "",
+      "data_hora_fim": "",
       "turma": "HTC-MEC-4-92",
-      "instrutor": "AFONSO DE JESUS CORDEIRO",
+      "instrutor": "AMANDA XAVIER XAVIER",
       "unidade_curricular": "DESENVOLVIMENTO DE SISTEMAS DE AUTOMAÇÃO MECÂNICA (CH: 100.0000)",
       "ambiente": "VTRIA-3-LAB-3003",
-      "chave": null
+      "chave": null,
+      "id": "1326"
     },
     {
-      "id": "b513",
-      "data": "2024-10-07",
-      "data_hora_inicio": "18:00",
-      "data_hora_fim": "21:30",
+      "data": "",
+      "data_hora_inicio": "17:00",
+      "data_hora_fim": "23:00",
       "turma": "AIT-DDS-5",
       "instrutor": "MATHEUS SARTI BRUNELLI",
       "unidade_curricular": "DESENVOLVIMENTO DE SISTEMAS DE AUTOMAÇÃO MECÂNICA (CH: 100.0000)",
       "ambiente": "VTRIA-3-LAB-3003",
-      "chave": null
+      "chave": null,
+      "id": "b513"
     }
   ],
   "imagens": [
