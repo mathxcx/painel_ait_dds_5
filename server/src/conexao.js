@@ -1,5 +1,5 @@
  const db = {
-    host: ' localhost',
+    host: 'localhost',
     user:'root',
     password:'',
     database:'painel'

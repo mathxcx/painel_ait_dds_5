@@ -1,5 +1,6 @@
 //Importando funções do AulaModel
-import { createAula } from "../models/AulaModel.js";
+import { createAula, showAulas } from "../models/AulaModel.js";
+
 
 export async function criarAula(req,res) {
     ///Ao ser chamado o criarAula controller vira no console
@@ -8,7 +9,10 @@ export async function criarAula(req,res) {
     //Criando constante com a requisição
     const aula = req.body;
 
-    //Tentando criar
+    //Exibindo corpo da requisição
+    console.log(aula);
+
+    //Tentando criar aula
 
     try {
         const[status,resposta] = await createAula(aula);
@@ -21,23 +25,19 @@ export async function criarAula(req,res) {
     
 }
 
-export function mostrarAulas(req,res){
-    return res.status(200).json(
-        [
-            {
+export async function mostrarAulas(req,res){
+   console.log('AulaController mostrarAula');
+   const aula = req.body;
 
-                "id": "1300",
-                "data": "",
-                "data_hora_inicio": "",
-                "data_hora_fim": "",
-                "turma": "EMP-NBM-03",
-                "instrutor": "GABRIEL DE ASSIS SPERANDIO",
-                "unidade_curricular": "NOÇÕES BÁSICAS PARA MAQUINISTAS (CH: 219.0000)",
-                "ambiente": "VTRIA-3-SALA-30045",
-                "chave": null
-                
-                  
-            }
-        ]
-    );
+   //Exibindo corpo da requisição
+   console.log(aula);
+
+   try {
+    const [status,resposta] = await showAulas(aula);
+    res.status(status).json(resposta);    
+   } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+    
+   }
 }
