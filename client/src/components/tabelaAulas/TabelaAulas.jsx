@@ -79,7 +79,7 @@ function TabelaAulas({tipo,onDeleteSuccess}) {
             <tbody>
                 {aulas.map((aula)=>(
 
-                    <tr key = {aula.id}>
+                    <tr key = {aula.idaulas}>
                         <td><AbreviaData data={aula.data_hora_inicio} /></td>
                         <td><AbreviaData data={aula.data_hora_fim}/></td>
                         <td>{aula.turma}</td>
@@ -89,8 +89,8 @@ function TabelaAulas({tipo,onDeleteSuccess}) {
                         <td><AbreviaAmbiente ambiente={aula.ambiente}/></td>
                         {tipo === 'edit' &&
                              <td>
-                                <Link to={`/edit_aula/${aula.id}`} className="btn btn-warning">Editar</Link>
-                                <button className="btn btn-danger ms-2" onClick={()=>deletarAulas(aula.id)}>Deletar</button>
+                                <Link to={`/edit_aula/${aula.idaulas}`} className="btn btn-warning">Editar</Link>
+                                <button className="btn btn-danger ms-2" onClick={()=>deletarAulas(aula.idaulas)}>Deletar</button>
                         
                             
                             

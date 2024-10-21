@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+//import FormatarData from './FormatarData';
 
 
 function FormAula({titulo,textoBotao,handleSubmit,id,tipo}) {
@@ -35,6 +36,7 @@ function FormAula({titulo,textoBotao,handleSubmit,id,tipo}) {
             }else{
                 const respostaJSON = await resposta.json();
                 console.log(respostaJSON);
+              //  setDataAula(FormatarData(respostaJSON.data));
                 setTurma(respostaJSON.turma);
                 setInstrutor(respostaJSON.instrutor);
                 setUnidadeCurricular(respostaJSON.unidade_curricular);
@@ -44,7 +46,7 @@ function FormAula({titulo,textoBotao,handleSubmit,id,tipo}) {
             }
             
         } catch (error) {
-            console.log(error)
+            
             
         }
     }
