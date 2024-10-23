@@ -74,7 +74,7 @@ export async function readAula(aula) {
     }
 
 }
-export async function updateAula(aula, id) {
+export async function updateAula(aula, idaulas) {
     //Criando conexão para o banco de dados usando configurações do db
     const conexao = mysql.createPool(db);
 
@@ -100,20 +100,23 @@ export async function updateAula(aula, id) {
         aula.instrutor,
         aula.unidade_curricular,
         aula.ambiente,
-        id
+        idaulas
     ];
 
     //Executando query no banco
     try {
         const [retorno] = await conexao.query(sql, params);
         console.log('Atualizando Aula');
-        return [200, retorno];
+        if(retorno.affectedRows < 1){
+            return[404,{message: "Aula não encontrada"}];
+        }
+        return [200, {message:"Aula Atualizada"}];
     } catch (error) {
         console.log(error);
         return [500, error];
     }
 }
-export async function deleteAula(id) {
+export async function deleteAula(idaulas) {
     //Criando conexão para o banco de dados usando configurações do db
     const conexao = mysql.createPool(db);
 
@@ -124,13 +127,16 @@ export async function deleteAula(id) {
     const sql = `DELETE FROM aulas WHERE ID=?`
 
     //Definindo parametros para inserir no sql
-    const params = [id];
+    const params = [idaulas];
 
     //Executando query no banco
     try {
         const [retorno] = await conexao.query(sql, params);
         console.log('Deletando Aula');
-        return [200, retorno];
+        if(retorno.affectedRows < 1){
+            return[404, {message: "Aula não encontrada"}];
+        }
+        return [200, {message: "Aula exlcuida"}];
     } catch (error) {
         console.log(error);
         return [500, error];
@@ -138,7 +144,7 @@ export async function deleteAula(id) {
 
 }
 
-export async function showOneAula(id) {
+export async function showOneAula(idaulas) {
    //Criando conexão para o banco de dados usando configurações do db
    const conexao = mysql.createPool(db);
 
@@ -149,7 +155,7 @@ export async function showOneAula(id) {
    const sql = `SELECT * FROM aulas WHERE idaulas=?`
 
    //Definindo parametros para inserir no sql
-   const params = [id];
+   const params = [idaulas];
 
    //Executando query no banco
    try {

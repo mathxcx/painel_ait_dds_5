@@ -37,7 +37,7 @@ function TabelaAulas({tipo,onDeleteSuccess}) {
 
   async function deletarAulas(id) {
     try {
-        const resposta = await fetch(`http://localhost:5000/aulas/${id}`,{
+        const resposta = await fetch('http://localhost:5000/aulas/${id}',{
             method: 'DELETE',
             headers:{
                 'Content-Type':'applicatio/json'
@@ -90,7 +90,7 @@ function TabelaAulas({tipo,onDeleteSuccess}) {
                         {tipo === 'edit' &&
                              <td>
                                 <Link to={`/edit_aula/${aula.idaulas}`} className="btn btn-warning">Editar</Link>
-                                <button className="btn btn-danger ms-2" onClick={()=>deletarAulas(aula.idaulas)}>Deletar</button>
+                                <button className="btn btn-danger ms-2" onClick={()=>deletarAulas(aula.id)}>Deletar</button>
                         
                             
                             

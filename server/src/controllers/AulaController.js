@@ -1,5 +1,6 @@
 //Importando funções do AulaModel
 import { createAula, readAula, updateAula, deleteAula, showOneAula} from "../models/AulaModel.js";
+import { isNullorEmpty, verificaAula } from "../../validations/AulaValidation.js";
 
 
 export async function criarAula(req, res) {
@@ -13,7 +14,11 @@ export async function criarAula(req, res) {
     //Exibindo corpo da requisição
     console.log(aula);
 
-    //Tentando criar aula
+    if(verificaAula(aula)){
+        res.status(400).json({message:'Todas as propriedades devem ser criadas'});
+    }else{
+
+   //Tentando criar aula
     try {
         const [status, resposta] = await createAula(aula)
         res.status(status).json(resposta);
@@ -21,6 +26,7 @@ export async function criarAula(req, res) {
         console.log(error);
         res.status(500).json(error);
     }
+  } 
 }
 
 export async function mostrarAulas(req, res) {
@@ -49,15 +55,23 @@ export async function atualizarAula(req, res) {
     //Criando constante com a requisição
     const aula = req.body;
     const { id } = req.params;
+    if(verificaAula(aula) || isNullorEmpty(id)){
+        res.status(400).json({message:'Todas propriedades devem ser preenchidas'});
 
-    //Tentando atualizar aula
-    try {
+    }else{
+
+      //Tentando atualizar aula
+      try {
         const [status, resposta] = await updateAula(aula, id);
         res.status(status).json(resposta)
     } catch (error) {
         console.log(error);
         res.status(500).json(error);
-    }
+    } 
+    
+    
+  }   
+    
 }
 
 export async function excluirAula(req,res) {
@@ -67,15 +81,23 @@ export async function excluirAula(req,res) {
     //Criando constante com a requisição
     const { id } = req.params;
 
-     //Tentando deletar aula
-     try {
+    if (isNullorEmpty(id)){
+        res.status(400).json({message: 'O id deve ser informado'});
+
+    }else {
+       //Tentando deletar aula
+       try {
         const [status, resposta] = await deleteAula(id);
         res.status(status).json(resposta)
     } catch (error) {
         console.log(error);
         res.status(500).json(error);
     }
+  } 
 }
+
+    
+     
 
 export async function mostrarUmaAula(req,res) {
     
